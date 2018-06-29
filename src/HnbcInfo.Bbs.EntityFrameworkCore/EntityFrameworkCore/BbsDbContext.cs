@@ -8,6 +8,10 @@ using HnbcInfo.Bbs.Bbs.Topics;
 using HnbcInfo.Bbs.Bbs.Nodes;
 using HnbcInfo.Bbs.Bbs.Likes;
 using HnbcInfo.Bbs.Bbs.Replies;
+using HnbcInfo.Bbs.Bbs.Ads;
+using HnbcInfo.Bbs.Bbs.Links;
+using HnbcInfo.Bbs.Bbs.Bonuses;
+using HnbcInfo.Bbs.Bbs.Collections;
 
 namespace HnbcInfo.Bbs.EntityFrameworkCore
 {
@@ -18,6 +22,11 @@ namespace HnbcInfo.Bbs.EntityFrameworkCore
         public virtual DbSet<Topic> Topics { get; set; }
         public virtual DbSet<Like> Likes { get; set; }
         public virtual DbSet<Reply> Replies { get; set; }
+        public virtual DbSet<Ad> Ads { get; set; }
+        public virtual DbSet<AdDeploy> AdDeploys { get; set; }
+        public virtual DbSet<Link> Links { get; set; }
+        public virtual DbSet<Bonus> Bonuses { get; set; }
+        public virtual DbSet<Collection> Collections { get; set; }
         
         public BbsDbContext(DbContextOptions<BbsDbContext> options)
             : base(options)

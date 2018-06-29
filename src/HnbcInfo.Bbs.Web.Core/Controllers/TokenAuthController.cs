@@ -65,7 +65,11 @@ namespace HnbcInfo.Bbs.Controllers
                 AccessToken = accessToken,
                 EncryptedAccessToken = GetEncrpyedAccessToken(accessToken),
                 ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
-                UserId = loginResult.User.Id
+                UserId = loginResult.User.Id,
+                Name = loginResult.User.Name,
+                Avatar =  loginResult.User.Avatar,
+                Renzheng = loginResult.User.Renzheng,
+                Vip = loginResult.User.Vip
             };
         }
 

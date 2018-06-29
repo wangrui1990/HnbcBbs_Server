@@ -14,6 +14,10 @@ namespace HnbcInfo.Bbs.Authorization.Users
 
         public virtual string Renzheng { get; set; }
 
+        public virtual string From { get; set; }
+
+        public virtual string Signature { get; set; }
+
         public static string CreateRandomPassword()
         {
             return Guid.NewGuid().ToString("N").Truncate(16);

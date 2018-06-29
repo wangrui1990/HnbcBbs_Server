@@ -5,7 +5,6 @@ using Abp.Events.Bus.Entities;
 using Abp.Notifications;
 using HnbcInfo.Bbs.Bbs.Ads;
 using HnbcInfo.Bbs.Bbs.Bonuses;
-using HnbcInfo.Bbs.Bbs.Collections;
 using HnbcInfo.Bbs.Bbs.Likes;
 using HnbcInfo.Bbs.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -20,9 +19,10 @@ using System;
 namespace HnbcInfo.Bbs.Migrations
 {
     [DbContext(typeof(BbsDbContext))]
-    partial class BbsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180629011327_add bonus entity")]
+    partial class addbonusentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -926,8 +926,6 @@ namespace HnbcInfo.Bbs.Migrations
                     b.Property<string>("EmailConfirmationCode")
                         .HasMaxLength(328);
 
-                    b.Property<string>("From");
-
                     b.Property<bool>("IsActive");
 
                     b.Property<bool>("IsDeleted");
@@ -974,8 +972,6 @@ namespace HnbcInfo.Bbs.Migrations
 
                     b.Property<string>("SecurityStamp")
                         .HasMaxLength(128);
-
-                    b.Property<string>("Signature");
 
                     b.Property<string>("Surname")
                         .IsRequired()
@@ -1057,24 +1053,6 @@ namespace HnbcInfo.Bbs.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Bonuses");
-                });
-
-            modelBuilder.Entity("HnbcInfo.Bbs.Bbs.Collections.Collection", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("CreationTime");
-
-                    b.Property<long?>("CreatorUserId");
-
-                    b.Property<long>("TargetId");
-
-                    b.Property<int>("Type");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Collections");
                 });
 
             modelBuilder.Entity("HnbcInfo.Bbs.Bbs.Likes.Like", b =>

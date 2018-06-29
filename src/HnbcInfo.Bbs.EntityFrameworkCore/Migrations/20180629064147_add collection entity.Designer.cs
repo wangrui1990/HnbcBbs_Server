@@ -20,9 +20,10 @@ using System;
 namespace HnbcInfo.Bbs.Migrations
 {
     [DbContext(typeof(BbsDbContext))]
-    partial class BbsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180629064147_add collection entity")]
+    partial class addcollectionentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -926,8 +927,6 @@ namespace HnbcInfo.Bbs.Migrations
                     b.Property<string>("EmailConfirmationCode")
                         .HasMaxLength(328);
 
-                    b.Property<string>("From");
-
                     b.Property<bool>("IsActive");
 
                     b.Property<bool>("IsDeleted");
@@ -974,8 +973,6 @@ namespace HnbcInfo.Bbs.Migrations
 
                     b.Property<string>("SecurityStamp")
                         .HasMaxLength(128);
-
-                    b.Property<string>("Signature");
 
                     b.Property<string>("Surname")
                         .IsRequired()

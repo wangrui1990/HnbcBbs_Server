@@ -20,9 +20,10 @@ using System;
 namespace HnbcInfo.Bbs.Migrations
 {
     [DbContext(typeof(BbsDbContext))]
-    partial class BbsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180629082051_user add from and signature")]
+    partial class useraddfromandsignature
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

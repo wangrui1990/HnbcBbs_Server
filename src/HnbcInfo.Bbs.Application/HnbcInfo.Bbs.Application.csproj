@@ -14,6 +14,19 @@
     <DefineConstants>FEATURE_SIGNALR_ASPNETCORE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Bbs\Users\**" />
+    <EmbeddedResource Remove="Bbs\Users\**" />
+    <None Remove="Bbs\Users\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Bbs\Auths\Dtos\RegisterInput.cs" />
+    <Compile Remove="Bbs\BbsUsers\Dtos\User4TopicDto.cs" />
+    <Compile Remove="Bbs\Topics\Dtos\User4TopicDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\HnbcInfo.Bbs.Core\HnbcInfo.Bbs.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Bbs\Auths\Dtos\" />
   </ItemGroup>
 </Project>
